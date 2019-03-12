@@ -36,6 +36,9 @@ class ConsoneoUniversignExtension extends Extension
 		$horodatage->addMethodCall('setDoctrine', [new Reference('doctrine')]);
 
 		// Add the service to the container
-		$container->setDefinition('universign.horodatage', $horodatage);
+		$container
+            ->setDefinition('universign.horodatage', $horodatage)
+            ->setPublic(true)
+        ;
     }
 }
